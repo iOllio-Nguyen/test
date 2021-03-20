@@ -19,7 +19,7 @@ export async function getServerSideProps(ctx) {
   
   return {
     props: {
-      // data,
+      data
       // userCredentical
     }
   }
@@ -94,6 +94,7 @@ const App =(props)=> {
 
     return (
       <>
+        <div>{typeof props.data}</div>
         <Menu/>
         {renderBody()}
         {renderMessageModal()}
