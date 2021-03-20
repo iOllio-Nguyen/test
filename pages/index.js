@@ -11,10 +11,10 @@ import  SuccessLottie from "../components/utilities/SuccessLottie"
 
 
 export async function getServerSideProps(ctx) {
-  const items = await fetch('/api/DAO/getLaptopList')
-  let data = await items.json()
+  // const items = await fetch('/api/DAO/getLaptopList')
+  // let data = await items.json()
   // const userCredentical = await getSession(ctx)
-  data = data.toString()
+  const data ="sadasdasdasdas"
   
   return {
     props: {
