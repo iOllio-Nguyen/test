@@ -9,7 +9,7 @@ import styles from '../styles/home.module.css'
 import Menu from "../components/menu/menu"
 import  SuccessLottie from "../components/utilities/SuccessLottie"
 
-
+import axios from 'axios'
 export async function getServerSideProps(ctx) {
   const items = await axios.get('/api/DAO/getLaptopList')
   let data = await items.json()
