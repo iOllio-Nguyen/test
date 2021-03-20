@@ -11,13 +11,19 @@ import  SuccessLottie from "../components/utilities/SuccessLottie"
 
 export async function getServerSideProps(ctx) {
   // const baseURL  = `https://${ctx.req.headers.host}`;
-  // const items = await fetch(`https://${'test-orcin-beta.vercel.app'}/api/DAO/getLaptopList`)
+  let data=[]
+  try{
+  const items = await fetch(`https://${'test-orcin-beta.vercel.app'}/api/DAO/getLaptopList`)
+  data = await items.json()
+  }catch(err){
+    data = [] 
+  }
   // const data = await items.json()
-  const data=[]
+  // const data=[]
 
   return {
     props: {
-      // a: ctx.req.headers,
+      a: ctx.req.headers,
       data,
       // baseURL: baseURL,
     }
