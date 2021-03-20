@@ -12,7 +12,7 @@ import  SuccessLottie from "../components/utilities/SuccessLottie"
 
 
 export async function getServerSideProps(ctx) {
-  const baseURL  = ctx.req.headers.referer;
+  const baseURL  = ctx.req.headers;
   // const items = await fetch(`${baseURL}api/DAO/getLaptopList`)
   // const data = await items.json()
   const data = []
