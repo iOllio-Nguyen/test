@@ -7,7 +7,7 @@ import Menu from "../components/menu/menu"
 import  SuccessLottie from "../components/utilities/SuccessLottie"
   
 export async function getServerSideProps(ctx) {
-    const baseURL  = `https://+${ctx.req.headers.host}`
+    const baseURL  = `https://${ctx.req.headers.host}`
     const id = ctx.query.id
     let item = ""
 

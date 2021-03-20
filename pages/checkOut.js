@@ -8,7 +8,7 @@ import Lottie from 'react-lottie'
 import Menu from "../components/menu/menu"
 
 export async function getServerSideProps(ctx) {
-    const baseURL  = `https://+${ctx.req.headers.host}`;
+    const baseURL  = `https://${ctx.req.headers.host}`;
     const userCredentical = await getSession(ctx) 
     return {
         props: {
