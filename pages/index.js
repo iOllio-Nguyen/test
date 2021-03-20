@@ -12,8 +12,8 @@ import  SuccessLottie from "../components/utilities/SuccessLottie"
 export async function getServerSideProps(ctx) {
   const baseURL  = `https://${ctx.req.headers.host}`;
   const items = await fetch(`https://${'test-orcin-beta.vercel.app'}/api/DAO/getLaptopList`)
-  // const data = await items.json()
-  const data=[]
+  const data = await items.json()
+  // const data=[]
 
   return {
     props: {
