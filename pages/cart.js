@@ -187,7 +187,6 @@ const Cart =(props)=> {
         }
 
         const openLogin =()=>{
-            console.log("dasdasd")
             setMessageModal(false)
             setLoginState(true)
         }

@@ -8,10 +8,12 @@ import Lottie from 'react-lottie'
 import Menu from "../components/menu/menu"
 
 export async function getServerSideProps(ctx) {
+    const baseURL  = `https://+${ctx.req.headers.host}`;
     const userCredentical = await getSession(ctx) 
     return {
         props: {
-            userCredentical
+            userCredentical,
+            baseURL:baseURL
         }
     }
 }
@@ -19,12 +21,13 @@ export async function getServerSideProps(ctx) {
 Modal.setAppElement("#__next")
 
 const Payment =(props)=> {
+    const baseURL =  props.baseURL
     const [cart, setCart] = useState(null)
     const userCredentical = props.userCredentical
     const [userProfile, setUserProfile] = useState(null)
    
     const getUserInfo =()=>{
-        axios.post('http://localhost:3000/api/DAO/getUserByEmail', {
+        axios.post(`${baseURL}/api/DAO/getUserByEmail`, {
             email: userCredentical.user.email
         }).then((profile)=>{
             setUserProfile(profile.data)
@@ -115,7 +118,7 @@ const Payment =(props)=> {
                 userProfile:userProfile,
                 cart:cart
             }
-            axios.post('http://localhost:3000/api/DAO/finishCheckOut', paymentInfo)
+            axios.post(`${baseURL}/api/DAO/finishCheckOut`, paymentInfo)
             .then(res=> {
                 window.location.href = '/'
                 window.localStorage.removeItem('webappCart')

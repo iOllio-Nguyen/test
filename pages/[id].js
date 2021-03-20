@@ -7,10 +7,11 @@ import Menu from "../components/menu/menu"
 import  SuccessLottie from "../components/utilities/SuccessLottie"
   
 export async function getServerSideProps(ctx) {
+    const baseURL  = `https://+${ctx.req.headers.host}`
     const id = ctx.query.id
     let item = ""
 
-    await axios.post('http://localhost:3000/api/DAO/getItemByName',{name:id})
+    await axios.post(`${baseURL}/api/DAO/getItemByName`,{name:id})
     .then(res => res.data?item=res.data:null)
     .catch(err => console.log(err))
 

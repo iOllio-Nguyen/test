@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
-// import { getSession, useSession } from 'next-auth/client'
 import Modal from "react-modal"
 import Link from 'next/link'
-// import axios from 'axios'
 // Styles
 import styles from '../styles/home.module.css'
 // Componet
@@ -12,10 +10,10 @@ import  SuccessLottie from "../components/utilities/SuccessLottie"
 
 
 export async function getServerSideProps(ctx) {
-  const baseURL  = ctx.req.headers;
-  // const items = await fetch(`${baseURL}api/DAO/getLaptopList`)
-  // const data = await items.json()
-  const data = []
+  const baseURL  = `https://+${ctx.req.headers.host}`;
+  const items = await fetch(`https://${baseURL}/api/DAO/getLaptopList`)
+  const data = await items.json()
+  
   return {
     props: {
       data,
@@ -28,14 +26,13 @@ export async function getServerSideProps(ctx) {
 Modal.setAppElement("#__next")
 
 const App =(props)=> {
-  console.log(props)
   const baseURL = props.baseURL
   const [laptopList, setLaptopList] = useState(props.data)
   const [isMessageModalOpen, setMessageModalSate] = useState(false)
 
   const fetchMoreData =async()=>{
       if(laptopList.length > 30){return}
-      const items = await fetch(`${baseURL}api/DAO/getLaptopList`)
+      const items = await fetch(`${baseURL}/api/DAO/getLaptopList`)
       const data = await items.json()
       setLaptopList(laptopList.concat(data))
   }
