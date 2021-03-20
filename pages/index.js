@@ -55,11 +55,11 @@ const App =(props)=> {
     setMessageModalSate(true)
   }
   
-  useEffect=()=>{
-    if(laptopList.length < 1)
-    fetch(`https://${'test-orcin-beta.vercel.app'}/api/DAO/getLaptopList`)
-    .then(data => setLaptopList(data.json()))
-  }
+  // useEffect=()=>{
+  //   if(laptopList.length < 1)
+  //   fetch(`https://${'test-orcin-beta.vercel.app'}/api/DAO/getLaptopList`)
+  //   .then(data => setLaptopList(data.json()))
+  // }
 
   const renderBody =()=>{
       return(    
