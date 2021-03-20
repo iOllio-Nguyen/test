@@ -11,10 +11,10 @@ import  SuccessLottie from "../components/utilities/SuccessLottie"
 
 
 export async function getServerSideProps(ctx) {
-  const items = await fetch('/api/DAO/getLaptopList')
-  const data = await items.json()
-  // console.log(JSON.stringify(data))
-  // JSON.stringify(data)
+  // const items = await fetch('/api/DAO/getLaptopList')
+  // const data = await items.json()
+  
+  const data = [{khoi:'nguyen'}]
   // const userCredentical = await getSession(ctx)
   return {
     props: {
@@ -27,7 +27,8 @@ export async function getServerSideProps(ctx) {
 Modal.setAppElement("#__next")
 
 const App =(props)=> {
-  const [laptopList, setLaptopList] = useState(props.data)
+  console.log(props)
+  const [laptopList, setLaptopList] = useState([])
   const [isMessageModalOpen, setMessageModalSate] = useState(false)
 
   const fetchMoreData =async()=>{
