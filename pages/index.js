@@ -25,77 +25,78 @@ export async function getServerSideProps(ctx) {
 Modal.setAppElement("#__next")
 
 const App =(props)=> {
-  const [laptopList, setLaptopList] = useState(props.data)
-  const [isMessageModalOpen, setMessageModalSate] = useState(false)
+  return (<div>{props.data}aaa</div>)
+  // const [laptopList, setLaptopList] = useState(props.data)
+  // const [isMessageModalOpen, setMessageModalSate] = useState(false)
 
-  const fetchMoreData =async()=>{
-      if(laptopList.length > 30){return}
+  // const fetchMoreData =async()=>{
+  //     if(laptopList.length > 30){return}
       
-      const items = await fetch('/api/DAO/getLaptopList')
-      const data = await items.json()
-      setLaptopList(laptopList.concat(data))
-  }
+  //     const items = await fetch('/api/DAO/getLaptopList')
+  //     const data = await items.json()
+  //     setLaptopList(laptopList.concat(data))
+  // }
 
-  const addToCart = (item) =>{
-    const localStorage = window.localStorage;
-    const cart = localStorage.getItem('webappCart')?JSON.parse(localStorage.getItem('webappCart')):[]
-    const itemIndex = cart.map((item) => {return item.name}).indexOf(item.name)
+  // const addToCart = (item) =>{
+  //   const localStorage = window.localStorage;
+  //   const cart = localStorage.getItem('webappCart')?JSON.parse(localStorage.getItem('webappCart')):[]
+  //   const itemIndex = cart.map((item) => {return item.name}).indexOf(item.name)
    
-    if(itemIndex == -1){
-      item.inCartQuantity = 1
-      cart.push(item) 
-    }
-    else{
-      cart[itemIndex].inCartQuantity += 1
-    }
-    localStorage.setItem('webappCart', JSON.stringify(cart))
-    setMessageModalSate(true)
-  }
+  //   if(itemIndex == -1){
+  //     item.inCartQuantity = 1
+  //     cart.push(item) 
+  //   }
+  //   else{
+  //     cart[itemIndex].inCartQuantity += 1
+  //   }
+  //   localStorage.setItem('webappCart', JSON.stringify(cart))
+  //   setMessageModalSate(true)
+  // }
   
-  const renderBody =()=>{
-      return(    
-        <InfiniteScroll
-          dataLength={laptopList.length}
-          next={fetchMoreData}
-          hasMore={true}
-          loader={<h4>Fetching...</h4>}
-          className={styles.productsContainer}
-        >        
-          {laptopList.map((laptop, index) => (
-            <div className={styles.product} key={index}> 
-              <Link href={`/${laptop.name}`}>
-              <div>
-                <img src={laptop.photo} />
+  // const renderBody =()=>{
+  //     return(    
+  //       <InfiniteScroll
+  //         dataLength={laptopList.length}
+  //         next={fetchMoreData}
+  //         hasMore={true}
+  //         loader={<h4>Fetching...</h4>}
+  //         className={styles.productsContainer}
+  //       >        
+  //         {laptopList.map((laptop, index) => (
+  //           <div className={styles.product} key={index}> 
+  //             <Link href={`/${laptop.name}`}>
+  //             <div>
+  //               <img src={laptop.photo} />
                 
-                <div className={styles.textBody}>
-                  <h4>{laptop.name}</h4>
-                  <div>{laptop.cpu} - {laptop.ram} - {laptop.gpu} - {laptop.storage} - {laptop.monitor}</div>
-                </div>
-              </div>
-              </Link>
+  //               <div className={styles.textBody}>
+  //                 <h4>{laptop.name}</h4>
+  //                 <div>{laptop.cpu} - {laptop.ram} - {laptop.gpu} - {laptop.storage} - {laptop.monitor}</div>
+  //               </div>
+  //             </div>
+  //             </Link>
             
-              <div className={styles.productFooter}>
-                <div className={styles.priceTag}>${laptop.price}</div>
-                <div className={styles.buyBtn} onClick={() => addToCart(laptop)}> Add to cart </div>
-              </div>
-            </div>
-          ))}
-        </InfiniteScroll>
-      )
-  }
+  //             <div className={styles.productFooter}>
+  //               <div className={styles.priceTag}>${laptop.price}</div>
+  //               <div className={styles.buyBtn} onClick={() => addToCart(laptop)}> Add to cart </div>
+  //             </div>
+  //           </div>
+  //         ))}
+  //       </InfiniteScroll>
+  //     )
+  // }
 
-  const renderMessageModal =()=>{
-    if(isMessageModalOpen)
-    return(<SuccessLottie closeSuccessLottie={setMessageModalSate}/>)
-  }
+  // const renderMessageModal =()=>{
+  //   if(isMessageModalOpen)
+  //   return(<SuccessLottie closeSuccessLottie={setMessageModalSate}/>)
+  // }
 
-    return (
-      <>
-        <Menu/>
-        {renderBody()}
-        {renderMessageModal()}
-      </>
-    );
+  //   return (
+  //     <>
+  //       <Menu/>
+  //       {renderBody()}
+  //       {renderMessageModal()}
+  //     </>
+  //   );
   }
 
   export default App
