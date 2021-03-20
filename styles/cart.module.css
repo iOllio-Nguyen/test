@@ -1,0 +1,169 @@
+.title{
+    padding: 10px 0px;
+    font-weight: 500;
+    color: rgb(59, 56, 56);
+    max-width: 1400px;
+    margin: auto;
+    letter-spacing: 3px;
+    text-shadow: 0px 1px 2px rgb(182, 182, 182);
+}
+
+.container{
+    background-color: rgb(231, 231, 231);
+    max-width: 1400px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, auto));
+    margin: auto;
+}
+
+.item{
+    position: relative;
+    height: 300px;
+    padding: 4px;
+    font-size: 13px;
+}
+
+.itemPhoto{
+    display: block;   
+    max-height: 100%;
+    margin: auto;
+    box-shadow: -3px 2px 4px rgb(29, 28, 28) ;
+}
+
+.itemInfo{
+    width: 60%;
+    padding: 15px;
+    position: absolute;
+    height: 100%;
+    right: 0px;
+    bottom: 0px;
+    background-color: rgb(46, 46, 46);
+    color: white;
+}
+
+
+/* quatity box */
+.quanityBox {
+    width: 60%;
+    display: inline-block;
+}
+
+.quanityBox > a{
+    padding: 0px 7px;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: bold;
+    color: gray;
+}
+
+.quanityBox > input{
+    display: inline-block;
+    text-align: center;
+    border: 1px solid rgb(44, 45, 49);
+    border-radius: 20px;
+    width: 50px;
+    font-size: 19px;
+    padding: 5px;
+    -moz-appearance: textfield;
+    outline: none;
+}
+
+
+.quanityBox > input::-webkit-outer-spin-button,
+.quanityBox > input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.removeBtn{
+    display: inline-block;
+    width: 40%;
+    font-size: 16px;
+    text-align: center;
+}
+
+.itemConsole{
+    border-top: 2px solid rgb(54, 56, 58);
+    padding: 10px 0px;
+    color: gray;
+    width: 100%;
+    margin-top: 20px;
+}
+
+@media only screen and (max-width: 400px) {
+    .container{
+        grid-template-columns: repeat(auto-fill, minmax(300px, auto));
+    }
+    
+    .itemInfo{
+        font-size: smaller ;
+        width: 50%;
+        padding: 10px;
+    }
+
+    .itemInfo > li{
+        padding: 3px ;
+    }
+
+    .quanityBox{
+        margin: auto;
+    }
+
+    .quanityBox > a{
+        font-size: 20px;
+    }
+
+    .quanityBox > input{
+        width: 50px;
+        font-size: 20px;
+    }
+
+    .removeBtn{
+        text-align: center;
+        margin: auto;
+        padding: 10px;
+    }
+    
+    .itemConsole{
+        font-size: 20px;
+        display: grid;
+        grid-template-columns: auto;
+    }    
+}
+
+.quanityBox > a:hover,.removeBtn:hover{
+    color: orange;
+    cursor: pointer;
+}
+
+.warn{
+    font-size: larger;
+    max-width: 1400px;
+    margin: auto;
+    text-align: center;
+}
+
+.checkOut{
+    max-width: 1400px ;
+    background: white;
+    height: 50px;
+    box-shadow: 0px -1px 3px gray;
+    margin: auto;
+    position: relative;
+    height: 50px;
+}
+
+.showCartInfo > a{
+    padding: 0px 20px;
+}
+
+.checkOutBtn{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    line-height: 50px;
+    padding: 0 15px;
+    background-color: gray;
+    cursor: pointer;
+}
+
+.displayTotal{}

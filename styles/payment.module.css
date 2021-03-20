@@ -1,0 +1,168 @@
+.container{
+    max-width: 1400px;
+    /* border: 1px solid black; */
+    margin: auto;
+}
+
+.content{
+    display: grid;
+    grid-template-columns: auto 300px;
+    grid-template-rows: 300px 300px;
+}
+
+.itemPreview{
+    width: 100%;
+    padding: 20px;
+}
+
+.previewList{
+    padding: 10px;
+    box-shadow: 0px 0px 2px gray;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    white-space: nowrap;
+    overflow:hidden;
+}
+.previewList:hover{
+    overflow-y: scroll;
+}
+
+.item{
+    margin-bottom: 10px;
+    height: 100px;
+    width: 100%;
+    box-shadow: 0px 0px 2px gray;
+    display: flex;
+}
+
+.item > img{
+    max-height: 100px;
+    width: 100px;
+}
+
+.itemInfo{
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto;
+    padding: 10px;
+}
+
+.itemInfo > div > a{
+    font-size: 14px;
+    padding: 15px;
+}
+
+.itemInfo > div[name="itemName"]{
+    height: fit-content;
+    border-bottom: 1px solid gray;
+    padding-left: 15px;
+    width: 100%;
+}
+
+.itemInfo >div[name="warrantyInfo"]{
+    font-size: 14px;
+    padding-left: 15px;
+}
+
+
+
+/* Payment info */
+.paymentInfoForm{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, auto));
+    height: 100%;
+    width: 100%;
+    border: 1px solid black;
+}
+
+.userInfo {
+    width: 90%;
+    margin: auto;
+}
+
+.userInfo > input{
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0px;
+}
+
+.paymentMethod{
+    border: 1px solid black;
+    /* padding: 20px */
+}
+
+.paymentMethod > div {
+    width: 90%;
+    margin: auto;
+    height: fit-content;
+    
+}
+
+.paymentMethod > div > div {
+    margin: 8px 0px;
+    padding: 20px 0px;
+    border: 1px solid black;
+}
+
+
+
+
+
+
+
+
+/* Checkout info */
+.checkOutInfo{
+    background-color: rgb(29, 30, 36);
+    color: white;
+    grid-column-start: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.checkOutInfoContent{
+    position: relative;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;     
+}
+
+.stickyPannel{
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    width: 100%;
+    bottom: 20px;
+    align-self: flex-end;
+}
+
+.totalPrice{
+    font-size: 50px;
+    width: 100%;
+    text-align: center;
+    padding: 15px 0px;
+}
+
+.finishCheckOutBtn{
+    background-color:rgb(255, 110, 57);
+    padding: 20px 0px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.finishCheckOutBtn:hover{
+    background-color: rgb(255, 132, 87);
+}
+
+
+.couponInput{
+    padding: 5px;
+    height: fit-content;
+    width: 100%;
+}
+
+.couponInput > input{
+    width: 100%;
+}

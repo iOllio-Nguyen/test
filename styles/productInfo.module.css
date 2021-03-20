@@ -1,0 +1,175 @@
+.container{
+    /* min-width: 700px; */
+    max-width: 1400px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit , minmax(700px, auto));
+    margin: auto; 
+    margin-top: 30px;
+}
+
+.productInfo{
+    width: 100%;
+    height: fit-content;
+    margin: auto;
+    padding: 10px;
+}
+
+.productInfo > h3{
+    text-align: center;
+}
+
+.productInfo > li{
+    padding: 3px 5px
+}
+
+.productInfo > li > a{
+    font-weight: 700;
+}
+
+.photo{
+    /* border-right: 2px solid gray; */
+}
+
+.photo > img{
+    max-width: 100%;
+    max-height: 400px;
+    display: block;
+    margin: auto;
+}
+
+.priceDisplay{
+    display: grid;
+    grid-template-columns: 20% 50% auto;
+    background-color: rgb(255, 178, 78);
+    box-shadow: 1px 1px 2px black;
+    height: fit-content;
+}
+
+.priceDisplay > a{
+    text-align: center;
+    line-height: 70px;
+}
+
+.price{
+    font-size: 35px;
+    font-weight: 700;
+    color: black;
+    padding: 0px 20px;
+}
+
+.quanityBox{
+    width: fit-content;
+    padding: 5px 0px;
+    display: flex;
+    margin: auto;
+}
+
+.quanityBox > *{
+    border: 1px solid rgb(44, 45, 49);
+    line-height: 45px;
+    text-align: center;
+}
+
+.quanityBox > a{
+    width: 50px;
+    cursor: pointer;
+    background-color:rgb(44, 45, 49) ;
+    color: white;
+    font-size: larger;
+}
+
+.quanityBox > input{
+    width: 60px;
+    font-size: larger;
+    -moz-appearance: textfield;
+    outline: none;
+}
+
+.quanityBox > input::-webkit-outer-spin-button,
+.quanityBox > input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+
+}
+
+.addBtn{
+    cursor: pointer;
+    background-color: rgb(44, 45, 49);
+    color: white;
+}
+
+.addBtn:hover,.quanityBox>a:hover{
+    background-color:rgb(0, 0, 0);
+    font-size: 20px;
+}
+
+
+@media only screen and (max-width: 500px) {    
+    .container{
+        display: block;
+    }
+
+    .photo > img{
+        max-width: 100%;
+        max-height: 300px;
+        display: block;
+        margin: auto;
+    }
+
+    
+.priceDisplay{
+    display: grid;
+    grid-template-columns: 80px auto 100px;
+    background-color: rgb(255, 178, 78);
+    box-shadow: 1px 1px 2px black;
+    height: fit-content;
+}
+
+.price{
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.quanityBox{
+    width: 120px;
+    display: flex;
+    margin: auto;
+}
+
+.quanityBox > *{
+    line-height: 40px;
+    text-align: center;
+}
+
+.quanityBox > a{
+    width: 40px;
+    cursor: pointer;
+    background-color:rgb(44, 45, 49) ;
+    color: white;
+    font-size: larger;
+}
+
+.quanityBox > input{
+    width: 50px;
+    font-size: larger;
+    -moz-appearance: textfield;
+    outline: none;
+}
+
+.quanityBox > input::-webkit-outer-spin-button,
+.quanityBox > input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+
+}
+
+.addBtn{
+    cursor: pointer;
+    background-color: rgb(44, 45, 49);
+    color: white;
+}
+
+.addBtn:hover,.quanityBox>a:hover{
+    background-color:rgb(0, 0, 0);
+}
+
+
+}
