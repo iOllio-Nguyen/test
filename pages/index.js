@@ -13,9 +13,9 @@ import  SuccessLottie from "../components/utilities/SuccessLottie"
 
 export async function getServerSideProps(ctx) {
   const baseURL  = ctx.req.headers.referer;
-  const items = await fetch(`${baseURL}api/DAO/getLaptopList`)
-  const data = await items.json()
-  // const data = []
+  // const items = await fetch(`${baseURL}api/DAO/getLaptopList`)
+  // const data = await items.json()
+  const data = []
   return {
     props: {
       data,
@@ -28,6 +28,7 @@ export async function getServerSideProps(ctx) {
 Modal.setAppElement("#__next")
 
 const App =(props)=> {
+  console.log(props)
   const baseURL = props.baseURL
   const [laptopList, setLaptopList] = useState(props.data)
   const [isMessageModalOpen, setMessageModalSate] = useState(false)
