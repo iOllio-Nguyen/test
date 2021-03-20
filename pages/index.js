@@ -93,7 +93,7 @@ const App =(props)=> {
 
     return (
       <>
-      <div>{props === null}</div>
+        {props === null?(<div>asdasdas</div>):(<>qqqqqqqqqqqqqqqqqqqqqq</>)}
         <Menu/>
         {renderBody()}
         {renderMessageModal()}
