@@ -20,7 +20,7 @@ export async function getServerSideProps(ctx) {
       a: `https://${baseURL}/api/DAO/getLaptopList`,
       data,
       baseURL: baseURL,
-      userCredentical:JSON.stringify(items)
+      // userCredentical:JSON.stringify(items)
     }
   }
 }
