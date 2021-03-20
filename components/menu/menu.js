@@ -12,18 +12,18 @@ import LoginForm from "../login/login"
 // import SigninVerifyModal from "../components/utilities/signinVerifyModal"
 // import  SuccessLottie from "../components/utilities/SuccessLottie"
 
-export async function getServerSideProps(ctx) {
-  const items = await fetch('http://localhost:3000/api/DAO/getLaptopList')
-  const data = await items.json()
-  const userCredentical = await getSession(ctx)
+// export async function getServerSideProps(ctx) {
+//   const items = await fetch('http://localhost:3000/api/DAO/getLaptopList')
+//   const data = await items.json()
+//   const userCredentical = await getSession(ctx)
    
-  return {
-    props: {
-      data,
-      userCredentical
-    }
-  }
-}
+//   return {
+//     props: {
+//       data,
+//       userCredentical
+//     }
+//   }
+// }
 
 Modal.setAppElement("#__next")
 

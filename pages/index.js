@@ -11,15 +11,15 @@ import  SuccessLottie from "../components/utilities/SuccessLottie"
 
 export async function getServerSideProps(ctx) {
   // const baseURL  = `https://${ctx.req.headers.host}`;
-  let data=[]
-  try{
-  const items = await fetch(`https://${'test-orcin-beta.vercel.app'}/api/DAO/getLaptopList`)
-  data = await items.json()
-  }catch(err){
-    data = [] 
-  }
+  // let data=[]
+  // try{
+  // const items = await fetch(`https://${'test-orcin-beta.vercel.app'}/api/DAO/getLaptopList`)
+  // data = await items.json()
+  // }catch(err){
+  //   data = [] 
+  // }
   // const data = await items.json()
-  // const data=[]
+  const data=[]
 
   return {
     props: {
@@ -61,11 +61,13 @@ const App =(props)=> {
     setMessageModalSate(true)
   }
   
-  // useEffect=()=>{
-  //   if(laptopList.length < 1)
-  //   fetch(`https://${'test-orcin-beta.vercel.app'}/api/DAO/getLaptopList`)
-  //   .then(data => setLaptopList(data.json()))
-  // }
+  useEffect(() => {
+    if(laptopList.length < 1)
+    fetch('https://test-orcin-beta.vercel.app/api/DAO/getLaptopList')
+    .then(data => {
+      console.log(data)
+      setLaptopList(data.json())})
+  })
 
   const renderBody =()=>{
       return(    
