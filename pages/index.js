@@ -11,7 +11,7 @@ import  SuccessLottie from "../components/utilities/SuccessLottie"
 
 
 export async function getServerSideProps(ctx) {
-  const items = await fetch('http://localhost:3000/api/DAO/getLaptopList')
+  const items = await fetch('/api/DAO/getLaptopList')
   const data = await items.json()
   const userCredentical = await getSession(ctx)
   return {
@@ -31,7 +31,7 @@ const App =(props)=> {
   const fetchMoreData =async()=>{
       if(laptopList.length > 30){return}
       
-      const items = await fetch('http://localhost:3000/api/DAO/getLaptopList')
+      const items = await fetch('/api/DAO/getLaptopList')
       const data = await items.json()
       setLaptopList(laptopList.concat(data))
   }
