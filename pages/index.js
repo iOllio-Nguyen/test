@@ -13,8 +13,8 @@ import  SuccessLottie from "../components/utilities/SuccessLottie"
 export async function getServerSideProps(ctx) {
   let data = ""
   try{
-  const items = await fetch('/api/DAO/getLaptopList')
-  data = await items.json()
+    const items = await fetch('/api/DAO/getLaptopList')
+    data = await items.json()
   }
   catch(err){
     data=err
