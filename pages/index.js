@@ -10,16 +10,16 @@ import  SuccessLottie from "../components/utilities/SuccessLottie"
 
 
 export async function getServerSideProps(ctx) {
-  const baseURL  = `https://${ctx.req.headers.host}`;
-  const items = await fetch(`https://${'test-orcin-beta.vercel.app'}/api/DAO/getLaptopList`)
-  const data = await items.json()
-  // const data=[]
+  // const baseURL  = `https://${ctx.req.headers.host}`;
+  // const items = await fetch(`https://${'test-orcin-beta.vercel.app'}/api/DAO/getLaptopList`)
+  // const data = await items.json()
+  const data=[]
 
   return {
     props: {
-      a: ctx.req.headers,
+      // a: ctx.req.headers,
       data,
-      baseURL: baseURL,
+      // baseURL: baseURL,
     }
   }
 }
@@ -55,6 +55,12 @@ const App =(props)=> {
     setMessageModalSate(true)
   }
   
+  useEffect=()=>{
+    if(laptopList.length < 1)
+    fetch(`https://${'test-orcin-beta.vercel.app'}/api/DAO/getLaptopList`)
+    .then(data => setLaptopList(data.json()))
+  }
+
   const renderBody =()=>{
       return(    
         <InfiniteScroll
