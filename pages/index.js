@@ -14,8 +14,6 @@ export async function getServerSideProps(ctx) {
   const items = await fetch(`https://${baseURL}/api/DAO/getLaptopList`)
   const data = await items.json()
   
-  
-  const data=[]
   return {
     props: {
       // a: `https://${baseURL}/api/DAO/getLaptopList`,
