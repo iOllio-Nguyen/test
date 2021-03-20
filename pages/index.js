@@ -9,17 +9,16 @@ import styles from '../styles/home.module.css'
 import Menu from "../components/menu/menu"
 import  SuccessLottie from "../components/utilities/SuccessLottie"
 
-import axios from 'axios'
+
 export async function getServerSideProps(ctx) {
-  const items = await axios.get('/api/DAO/getLaptopList')
-  let data = await items.json()
+  const items = await fetch('/api/DAO/getLaptopList')
+  const data = await items.json()
+  // console.log(JSON.stringify(data))
+  // JSON.stringify(data)
   // const userCredentical = await getSession(ctx)
-  // fetch('/api/DAO/getLaptopList')
-  // const data ="sadasdasdasdas"
-  
   return {
     props: {
-      data
+      data,
       // userCredentical
     }
   }
@@ -28,7 +27,7 @@ export async function getServerSideProps(ctx) {
 Modal.setAppElement("#__next")
 
 const App =(props)=> {
-  const [laptopList, setLaptopList] = useState([])
+  const [laptopList, setLaptopList] = useState(props.data)
   const [isMessageModalOpen, setMessageModalSate] = useState(false)
 
   const fetchMoreData =async()=>{
@@ -94,7 +93,6 @@ const App =(props)=> {
 
     return (
       <>
-        {<>{props.data.length}</>}
         <Menu/>
         {renderBody()}
         {renderMessageModal()}

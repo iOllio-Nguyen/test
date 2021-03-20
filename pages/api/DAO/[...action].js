@@ -102,7 +102,8 @@ const DAO = async(req,res)=>{
             //     connection.close()
             // }))
             await mongoose.connection.collection('laptop').find().toArray().then(data => {
-                laptopList = data
+                // laptopList = data
+                laptopList = JSON.stringify(data)
                 mongoose.connection.close()
             })
         } catch (error) {}
